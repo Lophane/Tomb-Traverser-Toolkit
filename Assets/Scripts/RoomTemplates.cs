@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class RoomTemplates : MonoBehaviour
 {
+    public int maxSizeX = 10;
+    public int maxSizeZ = 10;
+    public int maxRooms = 10;
+
     public GameObject[] bottomRooms;
     public GameObject[] topRooms;
     public GameObject[] leftRooms;
