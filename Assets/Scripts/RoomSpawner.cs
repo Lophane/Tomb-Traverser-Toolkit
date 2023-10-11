@@ -78,8 +78,10 @@ public class RoomSpawner : MonoBehaviour
     void Spawn()
     {
         if (spawned)
+        {
             Debug.Log("I'm Pooped");
             return;
+        }
 
         if (transform.position.x >= templates.maxSizeX || transform.position.x <= -templates.maxSizeX || transform.position.z >= templates.maxSizeZ || transform.position.z <= -templates.maxSizeZ || templates.rooms.Count >= templates.maxRooms)
         {
@@ -113,7 +115,7 @@ public class RoomSpawner : MonoBehaviour
         //Debug.Log("This town ain't big enought for the both of us");
         if (other.CompareTag("SpawnPoint"))
         {
-            if (other.GetComponent<RoomSpawner>().spawned == false && spawned == false)
+            if (other.GetComponent<RoomSpawner>().spawned == true && spawned == false)
             {
                 Instantiate(templates.closedRooms, transform.position, Quaternion.identity);
                 Debug.Log("This town ain't big enough for the both of us!");
