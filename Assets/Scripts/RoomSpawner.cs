@@ -22,9 +22,6 @@ public class RoomSpawner : MonoBehaviour
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
         Invoke("Spawn", .2f);
         Invoke("Reset", 2f);
-        Debug.Log(templates.maxSizeX);
-        Debug.Log(templates.maxSizeZ);
-        Debug.Log(templates.maxRooms);
     }
 
     /*void Spawn()
@@ -104,7 +101,9 @@ public class RoomSpawner : MonoBehaviour
                 availableRooms.AddRange(templates.splitRooms);
 
             GameObject roomToSpawn = availableRooms[Random.Range(0, availableRooms.Count)];
-            Instantiate(roomToSpawn, transform.position, roomToSpawn.transform.rotation);
+            GameObject instantiatedRoom = Instantiate(roomToSpawn, transform.position, roomToSpawn.transform.rotation);
+
+            templates.rooms.Add(instantiatedRoom);
 
             spawned = true;
         }
@@ -115,6 +114,7 @@ public class RoomSpawner : MonoBehaviour
         //Debug.Log("This town ain't big enought for the both of us");
         if (other.CompareTag("SpawnPoint"))
         {
+            Debug.Log("Oh My!");
             if (other.GetComponent<RoomSpawner>().spawned == true && spawned == false)
             {
                 Instantiate(templates.closedRooms, transform.position, Quaternion.identity);

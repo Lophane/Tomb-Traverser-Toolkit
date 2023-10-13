@@ -411,15 +411,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 665539941627991194, guid: f610f8ae237ca97479b928d3f4264def, type: 3}
       propertyPath: maxRooms
-      value: 40
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 665539941627991194, guid: f610f8ae237ca97479b928d3f4264def, type: 3}
       propertyPath: maxSizeX
-      value: 150
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 665539941627991194, guid: f610f8ae237ca97479b928d3f4264def, type: 3}
       propertyPath: maxSizeZ
-      value: 150
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 704212501112924847, guid: f610f8ae237ca97479b928d3f4264def, type: 3}
       propertyPath: m_RootOrder

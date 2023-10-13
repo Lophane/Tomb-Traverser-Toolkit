@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 6251661606362828237}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &7485376277351568053
 SphereCollider:
@@ -95,10 +95,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6251661606362828237}
     m_Modifications:
+    - target: {fileID: 1197632762464676764, guid: 407938e6b7814944e99017bb92c758a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0141bc0de40b03c47a7d54dba3567d7e, type: 2}
+    - target: {fileID: 2081598740977908175, guid: 407938e6b7814944e99017bb92c758a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0141bc0de40b03c47a7d54dba3567d7e, type: 2}
+    - target: {fileID: 2240045542009444057, guid: 407938e6b7814944e99017bb92c758a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0141bc0de40b03c47a7d54dba3567d7e, type: 2}
+    - target: {fileID: 3020792314557467625, guid: 407938e6b7814944e99017bb92c758a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a384b583426023d4da68d3f25e868451, type: 2}
     - target: {fileID: 6704762420485652773, guid: 407938e6b7814944e99017bb92c758a7, type: 3}
       propertyPath: m_Name
       value: Walls
       objectReference: {fileID: 0}
+    - target: {fileID: 6781639229791061328, guid: 407938e6b7814944e99017bb92c758a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0141bc0de40b03c47a7d54dba3567d7e, type: 2}
+    - target: {fileID: 7085205388174694426, guid: 407938e6b7814944e99017bb92c758a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a384b583426023d4da68d3f25e868451, type: 2}
     - target: {fileID: 7543702298062570484, guid: 407938e6b7814944e99017bb92c758a7, type: 3}
       propertyPath: m_RootOrder
       value: -1
