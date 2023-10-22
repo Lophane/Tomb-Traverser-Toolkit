@@ -236,7 +236,7 @@ MonoBehaviour:
   crouchKey: 306
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 0
   playerHeight: 0
   maxSlopeAngle: 20
   orientation: {fileID: 8838941475034340277}

@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     public static bool GameActive = false;
     public static bool BossDefeted = false;
+    public static float StartTimer = 0f;
     public static GameManager Instance
     {
         get { return instance; }

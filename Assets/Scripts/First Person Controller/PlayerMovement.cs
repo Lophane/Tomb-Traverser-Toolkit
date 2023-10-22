@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
         startYScale = transform.localScale.y;
 
-        Invoke("StartGame", 7f);
+        Invoke("StartGame", GameManager.StartTimer);
     }
 
     void Update()
@@ -145,7 +145,7 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.air;
         }
     }
-
+    /*
     private void MovePlayer()
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
@@ -163,7 +163,7 @@ public class PlayerMovement : MonoBehaviour
         //rb.useGravity = !OnSlope();
 
     }
-
+    */
     private void SpeedControl()
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
@@ -187,7 +187,7 @@ public class PlayerMovement : MonoBehaviour
     {
         readyToJump = true;
     }
-
+    /*
     private bool OnSlope()
     {
         if(Physics.Raycast(transform.position, Vector3.down,out slopeHit, playerHeight * .5f + (playerHeight * .05f)))
@@ -199,7 +199,7 @@ public class PlayerMovement : MonoBehaviour
         return false;
 
     }
-
+    */
     private Vector3 GetSlopeMoveDirection()
     {
         return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal);
@@ -209,5 +209,37 @@ public class PlayerMovement : MonoBehaviour
     {
         GameManager.GameActive = true;
     }
+
+    private void MovePlayer()
+    {
+        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+
+        if (grounded)
+        {
+            if (OnSlope())
+            {
+                rb.AddForce(GetSlopeMoveDirection() * moveSpeed * 10f, ForceMode.Force); // Reduced force
+            }
+            else
+            {
+                rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+            }
+        }
+        else
+        {
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+        }
+    }
+
+    private bool OnSlope()
+    {
+        if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * .5f + (playerHeight * .05f)))
+        {
+            float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            return angle <= maxSlopeAngle && angle > 0;
+        }
+        return false;
+    }
+
 
 }

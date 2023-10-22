@@ -15,7 +15,7 @@ public class CameraMovement : MonoBehaviour
 
     private void Start()
     {        
-        Invoke("StartGame", 8f);
+        Invoke("StartGame", GameManager.StartTimer);
 
     }
 
